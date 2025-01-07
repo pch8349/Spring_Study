@@ -40,4 +40,9 @@ public class MemoryMemberRepository implements MemberRepository{
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
+
+    // 테스트 시에만 사용하므로(테스트에서는 인터페이스 호출을 하지 않도록 작성해서) 인터페이스를 override 하지 않음
+    public void clearStore(){
+        store.clear();
+    }
 }
